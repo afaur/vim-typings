@@ -31,7 +31,7 @@ function! vim_typings#install(...)
   let stdouts = systemlist('typings install '.join(type_file_list, ' ').' --save')
   if len(stdouts)
     if join(stdouts, ', ') =~ 'typings ERR!'
-      let stdouts = systemlist('typings install '.join(type_file_list, ' ').' --ambient --save')
+      let stdouts = systemlist('typings install '.join(type_file_list, ' ').' --global --save')
     endif
     echom join(stdouts, ', ')
   endif
